@@ -14,10 +14,9 @@
 #   bouzuya <m@bouzuya.net>
 #
 module.exports = (robot) ->
-#  robot.respond /timer\s+(\d+)\s+(.*)$/i, (res) ->
-  robot.reply /timer\s+(\d+)\s+(.*)$/i, (res) ->
+  robot.respond /timer\s+(\d+)\s+(.*)$/i, (res) ->
     sec = res.match[1]
     message = res.match[2]
     setTimeout ->
-      res.send message
+      res.reply message
     , sec * 1000
